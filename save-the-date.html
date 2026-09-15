@@ -298,22 +298,27 @@
         .sec-moments .top-text {
             position: absolute;
             top: 21px;
-            left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 350px; text-align: center;
+            left: 0; right: 0;
+            width: 100%; padding: 0 16px;
+            text-align: center;
+            overflow: hidden;
         }
         .sec-moments .fancy-title {
             font-family: 'Dancing Script', cursive;
-            font-size: 48px;
+            font-size: 40px;
             background: linear-gradient(0deg, #A8DDD0 0%, #d4f5ec 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            display: block;
+            overflow: hidden;
         }
         .sec-moments .subtitle {
             font-family: 'Inter', sans-serif;
-            font-size: 15px; font-weight: 300;
+            font-size: 13px; font-weight: 300;
             color: rgba(255,255,255,0.8);
             line-height: 1.4; margin-top: 8px;
+            overflow: hidden;
         }
         .sec-moments .photo-ticker {
             position: absolute;
@@ -355,17 +360,21 @@
         .sec-moments .bottom-text {
             position: absolute;
             bottom: 37px;
-            left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 313px; text-align: center;
+            left: 0; right: 0;
+            width: 100%; padding: 0 16px;
+            text-align: center;
+            overflow: hidden;
         }
         .sec-moments .bottom-text .fancy-title {
-            font-size: 48px;
+            font-size: 40px;
+            overflow: hidden;
         }
         .sec-moments .bottom-text .sub {
             font-family: 'Inter', sans-serif;
             font-size: 13px; font-weight: 300;
             color: rgba(255,255,255,0.7);
             margin-top: 4px;
+            overflow: hidden;
         }
 
         /* ===== EVENT SECTIONS (693px each) ===== */
