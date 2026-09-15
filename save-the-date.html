@@ -192,9 +192,7 @@
             background: #A8DDD0; color: #1a4d40;
         }
         .sec-location .venue-info {
-            position: absolute;
-            bottom: 270px;
-            left: 50%; transform: translateX(-50%);
+            position: relative;
             text-align: center; z-index: 4;
             width: 280px;
         }
@@ -209,12 +207,11 @@
             margin-top: 4px; line-height: 1.5;
         }
         .sec-location .countdown {
-            position: absolute;
-            bottom: 19px;
-            left: 50%; transform: translateX(-50%);
+            position: relative;
             width: 300px;
             display: flex; justify-content: space-between;
             z-index: 4;
+            margin-top: 20px;
         }
         .sec-location .cd-box {
             width: 60px; height: 60px;
@@ -657,9 +654,7 @@
     <!-- SECTION 3: LOCATION & COUNTDOWN -->
     <section class="sec-location">
         <div class="bg-layer"><img src="https://framerusercontent.com/images/ZWHrPqD5JpDZiOK65EY0JABA.png?width=1080" alt="" loading="lazy"></div>
-        <div class="hotel-frame"><img src="https://framerusercontent.com/images/XLgWujE4miM7u3AJZ8olxUIiI.png?width=963" alt="Venue" loading="lazy"></div>
-        <div class="overlay-layer"><img src="https://framerusercontent.com/images/hy3l9WiUq7wqVNnujVTuQQZKyto.png?width=1080" alt="" loading="lazy"></div>
-        <div class="overlay-layer"><img src="https://framerusercontent.com/images/atQMuVPajD0VSfMiJyI8eC9S5GA.png?width=1080" alt="" loading="lazy"></div>
+        <!-- Removed hotel sketch and text overlays -->
         <div class="venue-info">
             <div class="label">VENUE:</div>
             <div class="name">The Wedding Venue</div>
