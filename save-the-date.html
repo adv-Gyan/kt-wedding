@@ -857,7 +857,7 @@
             playing = true;
             btn.textContent = '⏸';
         }
-        window.addEventListener('load', tryPlay);
+        document.addEventListener('DOMContentLoaded', tryPlay);
 
         function toggleMusic() {
             if (playing) { audio.pause(); btn.textContent = '♫'; }
