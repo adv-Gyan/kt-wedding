@@ -135,9 +135,10 @@
         /* ===== SECTION 3: LOCATION & COUNTDOWN (693px) ===== */
         .sec-location {
             position: relative;
-            width: 100%; height: 693px;
+            width: 100%; height: auto; padding: 70px 0;
             background: #1a4d40;
             overflow: hidden;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .sec-location .bg-layer {
             position: absolute;
@@ -213,23 +214,25 @@
             z-index: 4;
             margin-top: 20px;
         }
-        .sec-location .cd-box {
-            width: 60px; height: 60px;
-            background: rgba(26,77,64,0.55);
-            border: 2px solid #A8DDD0;
+        \.sec-location .cd-box {
+            width: 65px; height: 65px;
+            background: rgba(0,0,0,0.15);
+            border: 2px solid #d4af37;
             border-radius: 8px;
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
         }
-        .sec-location .cd-num {
-            font-family: 'Cinzel', serif;
-            font-size: 20px; font-weight: 700;
-            color: white;
-        }
-        .sec-location .cd-label {
+        \.sec-location .cd-num {
             font-family: 'Inter', sans-serif;
-            font-size: 8px; color: #A8DDD0;
-            margin-top: 2px;
+            font-size: 24px; font-weight: 500;
+            color: white;
+            line-height: 1.1;
+        }
+        \.sec-location .cd-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px; font-weight: 300;
+            color: #e0e0e0;
+            margin-top: 4px;
         }
 
         /* ===== SECTION 4: SPECIAL MOMENTS (693px) ===== */
@@ -620,13 +623,13 @@
             <p style="font-family:'Inter',sans-serif; font-size:11px; font-weight:300; color:rgba(255,255,255,0.6); letter-spacing:4px; text-transform:uppercase; margin-bottom:6px;">FOR THE WEDDING OF</p>
 
             <!-- Kartikay -->
-            <h2 style="font-family:'Cinzel Decorative',serif; font-size:28px; font-weight:400; color:#A8DDD0; letter-spacing:3px; text-shadow:0 2px 12px rgba(0,0,0,0.4); margin:0;">Kartikay</h2>
+            <h2 style="font-family:'Cinzel Decorative',serif; font-size:28px; font-weight:400; color:#d4af37; letter-spacing:3px; text-shadow:0 2px 12px rgba(0,0,0,0.4); margin:0;">Kartikay</h2>
 
             <!-- weds -->
             <p style="font-family:'Dancing Script',cursive; font-size:22px; color:#F2A8C0; margin:4px 0;">weds</p>
 
             <!-- Dishakkshi -->
-            <h2 style="font-family:'Cinzel Decorative',serif; font-size:28px; font-weight:400; color:#A8DDD0; letter-spacing:3px; text-shadow:0 2px 12px rgba(0,0,0,0.4); margin:0 0 18px 0;">Dishakkshi</h2>
+            <h2 style="font-family:'Cinzel Decorative',serif; font-size:28px; font-weight:400; color:#d4af37; letter-spacing:3px; text-shadow:0 2px 12px rgba(0,0,0,0.4); margin:0 0 18px 0;">Dishakkshi</h2>
 
             <!-- Divider with date -->
             <div style="display:flex; align-items:center; gap:12px; width:320px;">
@@ -651,12 +654,12 @@
         <div class="layer"><img src="https://framerusercontent.com/images/j3g6qC26bAGVVnIdYjeZQdWFDfs.png?width=1080" alt="" loading="lazy"></div>
     </section>
 
-    <!-- SECTION 3: LOCATION & COUNTDOWN -->
+        <!-- SECTION 3: COUNTDOWN -->
     <section class="sec-location">
-        
-        <!-- Removed hotel sketch and text overlays -->
-        
-
+        <div style="text-align:center; margin-bottom: 24px; z-index: 5; position: relative;">
+            <h2 style="font-family:'Cinzel Decorative', serif; font-size:24px; font-weight:400; color:white; margin:0 0 10px 0; letter-spacing:1px; text-shadow:1px 1px 4px rgba(0,0,0,0.3);">COUNTDOWN BEGINS</h2>
+            <p style="font-family:'Inter', sans-serif; font-size:10px; color:#d4af37; letter-spacing:3px; text-transform:uppercase; margin:0;">COUNTING DOWN TO THE WEDDING</p>
+        </div>
         <div class="countdown">
             <div class="cd-box"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
             <div class="cd-box"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
