@@ -679,21 +679,37 @@
         }
 
         /* ===== DYNAMIC SCROLL EFFECTS ===== */
-        .reveal {
+        .sec-event, .sec-ganesh, .sec-location, .sec-moments, .sec-rsvp, .sec-last {
             opacity: 0;
-            scale: 0.95;
-            transition: opacity 1.0s ease-out, scale 1.0s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 1.0s ease-out;
+            transition: opacity 1.2s ease-out;
         }
-        .reveal.active {
+        .sec-event.visible, .sec-ganesh.visible, .sec-location.visible, .sec-moments.visible, .sec-rsvp.visible, .sec-last.visible {
             opacity: 1;
-            scale: 1;
         }
-        .reveal-glow.active {
-            box-shadow: 0 0 45px rgba(168, 221, 208, 0.4);
+        .sec-event .ev-photo img {
+            transition: transform 0.6s ease-out;
         }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
+        .sec-event.visible .ev-photo img {
+            transform: scale(1.03);
+        }
+        .sec-event .ev-card {
+            transition: box-shadow 1s ease-out 0.3s;
+        }
+        .sec-event.visible .ev-card {
+            box-shadow: 0 0 30px rgba(168, 221, 208, 0.35);
+        }
+        .sec-ganesh .blanking-paper {
+            transition: box-shadow 1s ease-out 0.3s;
+        }
+        .sec-ganesh.visible .blanking-paper {
+            box-shadow: 0 0 40px 20px #fbfbfe, 0 0 60px rgba(168, 221, 208, 0.3);
+        }
+        .sec-location .cd-box {
+            transition: box-shadow 0.8s ease-out, border-color 0.8s ease-out;
+        }
+        .sec-location.visible .cd-box {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
 
     </style>
 </head>
@@ -781,8 +797,8 @@
     <!-- SECTION 4: SPECIAL MOMENTS -->
     <section class="sec-moments">
         <div class="top-text reveal">
-            <div class="fancy-title reveal">Special Moments</div>
-            <div class="subtitle reveal reveal-delay-1">Little glimpses of us, captured between<br>laughter, love and everything in between.</div>
+            <div class="fancy-title">Special Moments</div>
+            <div class="subtitle">Little glimpses of us, captured between<br>laughter, love and everything in between.</div>
         </div>
         <div class="photo-ticker">
             <div class="ticker-card short reveal delay-1"><img src="moment-1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
@@ -792,15 +808,15 @@
         </div>
         <div class="divider-line"><img src="https://framerusercontent.com/images/RnHgwTLHWJIQSHYTODaZYjFjZLg.png?width=718" alt="" loading="lazy"></div>
         <div class="bottom-text reveal">
-            <div class="fancy-title reveal">Events Schedule</div>
-            <div class="sub reveal reveal-delay-1">Here's where the celebrations begin</div>
+            <div class="fancy-title">Events Schedule</div>
+            <div class="sub">Here's where the celebrations begin</div>
         </div>
     </section>
 
     <!-- SECTION 5: HALDI -->
     <section class="sec-event" id="haldi">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/FILV0RmDkHyWvvp3aONRegv5VA.png?width=1080" alt="" loading="lazy"></div>
-        <div class="ev-photo reveal"><img src="event-1.jpg"></div>
+        <div class="ev-photo"><img src="event-1.jpg"></div>
         <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">11 TH DECEMBER 2026</div>
@@ -815,7 +831,7 @@
     <!-- SECTION 6: SANGEET -->
     <section class="sec-event" id="sangeet">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/XLQey2gyAOWV3AChea4BqxJu6o.png?width=1080" alt="" loading="lazy"></div>
-        <div class="ev-photo reveal"><img src="event-2.jpg"></div>
+        <div class="ev-photo"><img src="event-2.jpg"></div>
         <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">11 TH DECEMBER 2026</div>
@@ -830,7 +846,7 @@
     <!-- SECTION 7: WEDDING -->
     <section class="sec-event" id="wedding">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/tNO2x9trlgVd08uQyGLh6tYwPkc.png?width=1080" alt="" loading="lazy"></div>
-        <div class="ev-photo reveal"><img src="event-3.jpg"></div>
+        <div class="ev-photo"><img src="event-3.jpg"></div>
         <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">12 TH DECEMBER 2026</div>
@@ -845,7 +861,7 @@
     <!-- SECTION 8: RECEPTION -->
     <section class="sec-event" id="reception">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/8f5Z98JG6lmSrLx4kjhwmqXYs.png?width=1080" alt="" loading="lazy"></div>
-        <div class="ev-photo reveal"><img src="event-4.jpg"></div>
+        <div class="ev-photo"><img src="event-4.jpg"></div>
         <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">12 TH DECEMBER 2026</div>
@@ -889,8 +905,8 @@
             <div class="grid-cell reveal delay-3"><img src="end-3.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
             <div class="grid-cell reveal delay-4"><img src="end-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
         </div>
-        <div class="regards reveal">Regards</div>
-        <div class="family-name reveal reveal-delay-1">Kartikay & Dishakkshi</div>
+        <div class="regards">Regards</div>
+        <div class="family-name">Kartikay & Dishakkshi</div>
 
     </section>
 
@@ -989,12 +1005,9 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        // Optional: remove observer after revealing to only animate once
-                        // observer.unobserve(entry.target); 
+                        entry.target.classList.add('visible');
                     } else {
-                        // If we want it to animate again when scrolling back up:
-                        entry.target.classList.remove('active');
+                        entry.target.classList.remove('visible');
                     }
                 });
             }, {
@@ -1002,7 +1015,7 @@
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            document.querySelectorAll('.sec-event, .sec-ganesh, .sec-location, .sec-moments, .sec-rsvp, .sec-last').forEach(el => observer.observe(el));
         });
     </script>
 </body>
