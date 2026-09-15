@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kartikay & Dishakkshi – Save The Date</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Inter:wght@200;300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=Pinyon+Script&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background: #1a4d40;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            max-width: 390px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ===== SECTION 1: SAVE THE DATE (705px) ===== */
+        .sec-std {
+            position: relative;
+            width: 100%;
+            height: 705px;
+            background: #1a4d40;
+            overflow: hidden;
+        }
+        .sec-std .couple-photo {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            aspect-ratio: 0.56;
+            height: auto;
+            overflow: visible;
+        }
+        .sec-std .couple-photo .placeholder {
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, #3d8a76 0%, #2d6b5a 30%, #1a4d40 70%);
+        }
+        .sec-std .couple-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center;
+        }
+        .sec-std .fade-bottom {
+            position: absolute;
+            bottom: 63px; left: 0; right: 0;
+            height: 366px;
+            background: linear-gradient(rgba(26,77,64,0) 0%, #1a4d40 100%);
+        }
+        .sec-std .fade-mid {
+            position: absolute;
+            top: calc(54.11% - 183px); left: 0; right: 0;
+            height: 366px;
+            background: linear-gradient(rgba(26,77,64,0) 0%, #1a4d40 100%);
+        }
+        .sec-std .std-title {
+            position: absolute;
+            bottom: 128px;
+            left: 50%; transform: translateX(-50%);
+            width: 260px;
+            text-align: center;
+        }
+        .sec-std .std-title h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 25px; font-weight: 300;
+            color: white; letter-spacing: 4px;
+        }
+        .sec-std .std-title p {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px; font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 2px;
+            margin-top: 6px;
+        }
+        .sec-std .couple-names {
+            position: absolute;
+            bottom: 63px;
+            left: 50%; transform: translateX(-50%);
+            width: 300px; text-align: center;
+        }
+        .sec-std .couple-names h3 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 26px; color: #A8DDD0;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .sec-std .couple-names .weds {
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px; color: #F2A8C0;
+            margin: 2px 0;
+        }
+        .sec-std .date-badge {
+            position: absolute;
+            bottom: 23px;
+            left: 50%; transform: translateX(-50%);
+            width: 335px; height: 23px;
+            display: flex; align-items: center;
+            justify-content: center; gap: 0;
+        }
+        .sec-std .date-line {
+            flex: 1; height: 1px;
+            background: linear-gradient(90deg, rgba(168,221,208,0) 0%, #A8DDD0 100%);
+        }
+        .sec-std .date-line.right {
+            background: linear-gradient(90deg, #A8DDD0 0%, rgba(168,221,208,0) 100%);
+        }
+        .sec-std .date-badge span {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px; font-weight: 300;
+            color: white; letter-spacing: 4px;
+            padding: 0 16px; white-space: nowrap;
+        }
+
+        /* ===== SECTION 2: SHREE GANESH (693px) ===== */
+        .sec-ganesh {
+            position: relative;
+            width: 100%; height: 693px;
+            background: #1a4d40;
+            overflow: hidden;
+        }
+        .sec-ganesh .layer {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            aspect-ratio: 0.56; height: auto;
+        }
+        .sec-ganesh .layer img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: hue-rotate(185deg) saturate(0.85);
+        }
+
+        /* ===== SECTION 3: LOCATION & COUNTDOWN (693px) ===== */
+        .sec-location {
+            position: relative;
+            width: 100%; height: 693px;
+            background: #1a4d40;
+            overflow: hidden;
+        }
+        .sec-location .bg-layer {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            aspect-ratio: 0.56; height: auto;
+        }
+        .sec-location .bg-layer img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: hue-rotate(185deg) saturate(0.85);
+        }
+        .sec-location .hotel-frame {
+            position: absolute;
+            top: 105px;
+            left: 50%; transform: translateX(-50%);
+            width: 353px; height: 255px;
+            border-radius: 16px; overflow: hidden;
+            z-index: 2;
+        }
+        .sec-location .hotel-frame img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: hue-rotate(185deg) saturate(0.85);
+        }
+        .sec-location .overlay-layer {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            aspect-ratio: 0.56; height: auto;
+            z-index: 3;
+        }
+        .sec-location .overlay-layer img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: hue-rotate(185deg) saturate(0.85);
+        }
+        .sec-location .directions-btn {
+            position: absolute;
+            bottom: 236px;
+            left: 50%; transform: translateX(-50%);
+            z-index: 4;
+            padding: 12px 40px;
+            border: 1.5px solid #A8DDD0;
+            border-radius: 30px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px; letter-spacing: 0.02em;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .sec-location .directions-btn:hover {
+            background: #A8DDD0; color: #1a4d40;
+        }
+        .sec-location .venue-info {
+            position: absolute;
+            bottom: 270px;
+            left: 50%; transform: translateX(-50%);
+            text-align: center; z-index: 4;
+            width: 280px;
+        }
+        .sec-location .venue-info .label {
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 10px; color: #A8DDD0;
+            letter-spacing: 2px;
+        }
+        .sec-location .venue-info .name {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px; color: rgba(255,255,255,0.8);
+            margin-top: 4px; line-height: 1.5;
+        }
+        .sec-location .countdown {
+            position: absolute;
+            bottom: 19px;
+            left: 50%; transform: translateX(-50%);
+            width: 300px;
+            display: flex; justify-content: space-between;
+            z-index: 4;
+        }
+        .sec-location .cd-box {
+            width: 60px; height: 60px;
+            background: rgba(26,77,64,0.55);
+            border: 2px solid #A8DDD0;
+            border-radius: 8px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+        }
+        .sec-location .cd-num {
+            font-family: 'Cinzel', serif;
+            font-size: 20px; font-weight: 700;
+            color: white;
+        }
+        .sec-location .cd-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 8px; color: #A8DDD0;
+            margin-top: 2px;
+        }
+
+        /* ===== SECTION 4: SPECIAL MOMENTS (693px) ===== */
+        .sec-moments {
+            position: relative;
+            width: 100%; height: 693px;
+            background: #1a4d40;
+            overflow: hidden;
+        }
+        .sec-moments .top-text {
+            position: absolute;
+            top: 21px;
+            left: 50%; transform: translateX(-50%);
+            width: 350px; text-align: center;
+        }
+        .sec-moments .fancy-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            background: linear-gradient(0deg, #A8DDD0 0%, #d4f5ec 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .sec-moments .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px; font-weight: 300;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.4; margin-top: 8px;
+        }
+        .sec-moments .photo-ticker {
+            position: absolute;
+            top: calc(49.21% - 147.5px);
+            left: 0; right: 0;
+            height: 295px;
+            display: flex; gap: 10px;
+            align-items: center;
+            overflow-x: auto;
+            padding: 0 20px;
+            scrollbar-width: none;
+        }
+        .sec-moments .photo-ticker::-webkit-scrollbar { display: none; }
+        .sec-moments .ticker-card {
+            position: relative;
+            flex-shrink: 0;
+            width: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #d4f5ec 0%, #A8DDD0 35%, #F2A8C0 70%, #fce8f0 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .sec-moments .ticker-card.tall { height: 268px; }
+        .sec-moments .ticker-card.short { height: 230px; }
+        
+        .sec-moments .divider-line {
+            position: absolute;
+            bottom: 155px;
+            left: 50%; transform: translateX(-50%);
+            width: 240px; height: 17px;
+        }
+        .sec-moments .divider-line img {
+            width: 100%; height: 100%;
+            object-fit: contain;
+            filter: hue-rotate(185deg) saturate(0.85);
+        }
+        .sec-moments .bottom-text {
+            position: absolute;
+            bottom: 37px;
+            left: 50%; transform: translateX(-50%);
+            width: 313px; text-align: center;
+        }
+        .sec-moments .bottom-text .fancy-title {
+            font-size: 48px;
+        }
+        .sec-moments .bottom-text .sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px; font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            margin-top: 4px;
+        }
+
+        /* ===== EVENT SECTIONS (693px each) ===== */
+        .sec-event {
+            position: relative;
+            width: 100%; height: 693px;
+            background: #1a4d40;
+            overflow: hidden;
+        }
+        .sec-event .ev-bg {
+            position: absolute;
+            top: 0; bottom: 0; right: -1px;
+            aspect-ratio: 0.56;
+        }
+        .sec-event .ev-bg img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: hue-rotate(185deg) saturate(0.85);
+        }
+        .sec-event .ev-photo {
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 316px; height: 393px;
+            border-radius: 10px; overflow: hidden;
+            z-index: 2;
+            background: linear-gradient(135deg, #d4f5ec 0%, #A8DDD0 35%, #F2A8C0 70%, #fce8f0 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        
+        .sec-event .ev-photo img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: none !important;
+        }
+        .sec-event .ev-title-overlay {
+            position: absolute;
+            top: 327px; left: 50%; transform: translateX(-50%);
+            width: 240px; text-align: center;
+            z-index: 3;
+        }
+        .sec-event .ev-title-overlay h3 {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 30px; color: white;
+        }
+        .sec-event .ev-title-overlay p {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px; font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.5; margin-top: 4px;
+        }
+        .sec-event .ev-card {
+            position: absolute;
+            top: 406px;
+            left: 50%; transform: translateX(-50%);
+            width: 312px; height: 182px;
+            background: linear-gradient(180deg, #d4f5ec 0%, #e8f7f2 100%);
+            border: 3px solid #A8DDD0;
+            border-radius: 23px;
+            z-index: 2;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 16px;
+            gap: 8px;
+        }
+        .sec-event .ev-card .ev-datetime {
+            text-align: center;
+        }
+        .sec-event .ev-card .ev-date {
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 14px; color: #1a4d40;
+        }
+        .sec-event .ev-card .ev-time {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px; color: #4A9A88;
+            margin-top: 2px;
+        }
+        .sec-event .ev-card .ev-venue-label {
+            font-family: 'Sawarabi Mincho', serif;
+            font-size: 10px; color: #1a4d40;
+            letter-spacing: 2px;
+        }
+        .sec-event .ev-card .ev-venue-addr {
+            font-family: 'Inter', sans-serif;
+            font-size: 8px; color: #4A9A88;
+            text-align: center; line-height: 1.4;
+        }
+        .sec-event .ev-card .ev-dir-btn {
+            padding: 6px 24px;
+            border: 1px solid #A8DDD0;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 9px; letter-spacing: 1px;
+            color: #1a4d40;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .sec-event .ev-card .ev-dir-btn:hover {
+            background: #1a4d40; color: #A8DDD0;
+        }
+
+        /* ===== RSVP (693px) ===== */
+        .sec-rsvp {
+            position: relative;
+            width: 100%; height: 693px;
+            background: #1a4d40;
+            overflow: hidden;
+        }
+        .sec-rsvp .rsvp-bg {
+            position: absolute; inset: 0;
+        }
+        .sec-rsvp .rsvp-bg img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: hue-rotate(185deg) saturate(0.85);
+        }
+        .sec-rsvp .rsvp-grad-top {
+            position: absolute;
+            top: -1px; left: 0; right: 0;
+            height: 120px;
+            background: linear-gradient(#1a4d40 0%, rgba(26,77,64,0) 100%);
+            z-index: 1;
+        }
+        .sec-rsvp .rsvp-grad-bot {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 120px;
+            background: linear-gradient(rgba(26,77,64,0) 0%, #1a4d40 100%);
+            z-index: 1;
+        }
+        .sec-rsvp .rsvp-form-card {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 348px;
+            background: #f0faf7;
+            border: 3px solid #4A9A88;
+            border-radius: 23px;
+            padding: 36px 28px;
+            z-index: 2;
+            text-align: center;
+        }
+        .sec-rsvp .rsvp-form-card h2 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 36px; color: #1a4d40;
+            margin-bottom: 12px;
+        }
+        .sec-rsvp .rsvp-form-card .note {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px; font-weight: 300;
+            color: #4A9A88;
+            line-height: 1.8; letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .sec-rsvp .rsvp-options {
+            display: flex; flex-direction: column;
+            gap: 10px; margin-bottom: 16px;
+            text-align: left;
+        }
+        .sec-rsvp .rsvp-option {
+            display: flex; align-items: center; gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px; font-weight: 500;
+            color: #666;
+        }
+        .sec-rsvp .rsvp-option input[type="radio"] {
+            accent-color: #4A9A88;
+        }
+        .sec-rsvp .rsvp-field {
+            margin-bottom: 12px; text-align: left;
+        }
+        .sec-rsvp .rsvp-field label {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px; font-weight: 500;
+            color: #1a4d40;
+            display: block; margin-bottom: 4px;
+        }
+        .sec-rsvp .rsvp-field input {
+            width: 100%; height: 40px;
+            border-radius: 10px;
+            border: 2px solid #4A9A88;
+            background: rgba(168,221,208,0.1);
+            padding: 0 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px; color: #1a4d40;
+            outline: none;
+        }
+        .sec-rsvp .rsvp-submit {
+            width: 100%; height: 40px;
+            border-radius: 10px; border: none;
+            background: #4A9A88;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px; font-weight: 600;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: background 0.3s;
+        }
+        .sec-rsvp .rsvp-submit:hover {
+            background: #1a4d40;
+        }
+
+        /* ===== LAST SLIDE (693px) ===== */
+        .sec-last {
+            position: relative;
+            width: 100%; height: 693px;
+            background: #1a4d40;
+            overflow: hidden;
+        }
+        .sec-last .photo-grid {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            aspect-ratio: 0.77;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .sec-last .photo-grid .grid-cell {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #d4f5ec 0%, #A8DDD0 35%, #F2A8C0 70%, #fce8f0 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        
+        .sec-last .photo-grid .grid-cell img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: none !important;
+        }
+        .sec-last .regards {
+            position: absolute;
+            bottom: 95px;
+            left: 50%; transform: translateX(-50%);
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            color: #A8DDD0;
+        }
+        .sec-last .family-name {
+            position: absolute;
+            bottom: 66px;
+            left: 50%; transform: translateX(-50%);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px; font-weight: 200;
+            color: white; white-space: nowrap;
+        }
+        .sec-last .invite-footer {
+            position: absolute;
+            bottom: 11px;
+            left: 50%; transform: translateX(-50%);
+            display: flex; align-items: center; gap: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px; font-weight: 200;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ===== FALLING PETALS ===== */
+        .petals-container {
+            position: fixed;
+            inset: -30px 0 0;
+            z-index: 9;
+            pointer-events: none;
+            opacity: 0.35;
+            overflow: hidden;
+        }
+        .petal {
+            position: absolute;
+            width: 8px; height: 8px;
+            border-radius: 50% 0 50% 0;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* ===== MUSIC BTN ===== */
+        .music-btn {
+            position: fixed;
+            top: 10px; right: 10px;
+            width: 20px; height: 20px;
+            border-radius: 5px;
+            background: #E8768A;
+            border: none;
+            color: white;
+            font-size: 10px;
+            cursor: pointer;
+            z-index: 20;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex; align-items: center; justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1: SAVE THE DATE -->
+    <section class="sec-std">
+        <div class="couple-photo">
+            <div class="placeholder"></div>
+            <div class="fade-mid"></div>
+            <div class="fade-bottom"></div>
+        </div>
+        <div class="std-title">
+            <h2>SAVE THE DATE</h2>
+            <p>FOR THE WEDDING OF</p>
+        </div>
+        <div class="couple-names">
+            <h3>Kartikay</h3>
+            <div class="weds">weds</div>
+            <h3>Dishakkshi</h3>
+        </div>
+        <div class="date-badge">
+            <div class="date-line"></div>
+            <span>11-12 DEC 2026</span>
+            <div class="date-line right"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SHREE GANESH -->
+    <section class="sec-ganesh">
+        <div class="layer"><img src="https://framerusercontent.com/images/8f5Z98JG6lmSrLx4kjhwmqXYs.png?width=1080" alt="" loading="lazy"></div>
+        <div class="layer"><img src="https://framerusercontent.com/images/bUjiHTfflIY528wiTWAKO4TfQ.png?width=1080" alt="" loading="lazy"></div>
+        <div class="layer"><img src="https://framerusercontent.com/images/1sAQvf2IZ1ef0qJSUtMxNv9yH8.png?width=1080" alt="" loading="lazy"></div>
+        <div class="layer"><img src="https://framerusercontent.com/images/acmDK1YyDCNgHaY3okCzRIIYGE.png?width=1080" alt="" loading="lazy"></div>
+        <div class="layer"><img src="https://framerusercontent.com/images/aUwLweY28l2aD8UnJsutcj7scKY.png?width=1080" alt="" loading="lazy"></div>
+        <div class="layer"><img src="https://framerusercontent.com/images/cWE00LdyW2w4KRVGJVrTVbmghlE.png?width=1080" alt="" loading="lazy"></div>
+        <div class="layer"><img src="https://framerusercontent.com/images/j3g6qC26bAGVVnIdYjeZQdWFDfs.png?width=1080" alt="" loading="lazy"></div>
+    </section>
+
+    <!-- SECTION 3: LOCATION & COUNTDOWN -->
+    <section class="sec-location">
+        <div class="bg-layer"><img src="https://framerusercontent.com/images/ZWHrPqD5JpDZiOK65EY0JABA.png?width=1080" alt="" loading="lazy"></div>
+        <div class="hotel-frame"><img src="https://framerusercontent.com/images/XLgWujE4miM7u3AJZ8olxUIiI.png?width=963" alt="Venue" loading="lazy"></div>
+        <div class="overlay-layer"><img src="https://framerusercontent.com/images/hy3l9WiUq7wqVNnujVTuQQZKyto.png?width=1080" alt="" loading="lazy"></div>
+        <div class="overlay-layer"><img src="https://framerusercontent.com/images/atQMuVPajD0VSfMiJyI8eC9S5GA.png?width=1080" alt="" loading="lazy"></div>
+        <div class="venue-info">
+            <div class="label">VENUE:</div>
+            <div class="name">The Wedding Venue</div>
+        </div>
+        <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="directions-btn">TAP FOR DIRECTIONS</a>
+        <div class="countdown">
+            <div class="cd-box"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
+            <div class="cd-box"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
+            <div class="cd-box"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Minutes</div></div>
+            <div class="cd-box"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Seconds</div></div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: SPECIAL MOMENTS -->
+    <section class="sec-moments">
+        <div class="top-text">
+            <div class="fancy-title">Special Moments</div>
+            <div class="subtitle">Little glimpses of us, captured between<br>laughter, love and everything in between.</div>
+        </div>
+        <div class="photo-ticker">
+            <div class="ticker-card short"><img src="moment-1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="ticker-card tall"><img src="moment-2.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="ticker-card short"><img src="moment-3.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="ticker-card tall"><img src="moment-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+        </div>
+        <div class="divider-line"><img src="https://framerusercontent.com/images/RnHgwTLHWJIQSHYTODaZYjFjZLg.png?width=718" alt="" loading="lazy"></div>
+        <div class="bottom-text">
+            <div class="fancy-title">Events Schedule</div>
+            <div class="sub">Here's where the celebrations begin</div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: HALDI -->
+    <section class="sec-event" id="haldi">
+        <div class="ev-bg"><img src="https://framerusercontent.com/images/FILV0RmDkHyWvvp3aONRegv5VA.png?width=1080" alt="" loading="lazy"></div>
+        <div class="ev-photo"><img src="event-1.jpg"></div>
+        <div class="ev-title-overlay">
+            <h3>Haldi Carnival</h3>
+            <p>A vibrant morning of haldi, laughter, and blessings to brighten the celebrations.</p>
+        </div>
+        <div class="ev-card">
+            <div class="ev-datetime">
+                <div class="ev-date">11 TH DECEMBER 2026</div>
+                <div class="ev-time">10 AM onwards</div>
+            </div>
+            <div class="ev-venue-label">VENUE:</div>
+            <div class="ev-venue-addr">The Wedding Venue</div>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+        </div>
+    </section>
+
+    <!-- SECTION 6: SANGEET -->
+    <section class="sec-event" id="sangeet">
+        <div class="ev-bg"><img src="https://framerusercontent.com/images/XLQey2gyAOWV3AChea4BqxJu6o.png?width=1080" alt="" loading="lazy"></div>
+        <div class="ev-photo"><img src="event-2.jpg"></div>
+        <div class="ev-title-overlay">
+            <h3>Sangeet</h3>
+            <p>An evening of blessings, music, and celebration to kick off the wedding festivities.</p>
+        </div>
+        <div class="ev-card">
+            <div class="ev-datetime">
+                <div class="ev-date">11 TH DECEMBER 2026</div>
+                <div class="ev-time">7 PM onwards</div>
+            </div>
+            <div class="ev-venue-label">VENUE:</div>
+            <div class="ev-venue-addr">The Wedding Venue</div>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+        </div>
+    </section>
+
+    <!-- SECTION 7: WEDDING -->
+    <section class="sec-event" id="wedding">
+        <div class="ev-bg"><img src="https://framerusercontent.com/images/tNO2x9trlgVd08uQyGLh6tYwPkc.png?width=1080" alt="" loading="lazy"></div>
+        <div class="ev-photo"><img src="event-3.jpg"></div>
+        <div class="ev-title-overlay">
+            <h3>Wedding</h3>
+            <p>A sacred union of hearts, families, and traditions as we begin our forever.</p>
+        </div>
+        <div class="ev-card">
+            <div class="ev-datetime">
+                <div class="ev-date">12 TH DECEMBER 2026</div>
+                <div class="ev-time">11 AM onwards</div>
+            </div>
+            <div class="ev-venue-label">VENUE:</div>
+            <div class="ev-venue-addr">The Wedding Venue</div>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+        </div>
+    </section>
+
+    <!-- SECTION 8: RECEPTION -->
+    <section class="sec-event" id="reception">
+        <div class="ev-bg"><img src="https://framerusercontent.com/images/8f5Z98JG6lmSrLx4kjhwmqXYs.png?width=1080" alt="" loading="lazy"></div>
+        <div class="ev-photo"><img src="event-4.jpg"></div>
+        <div class="ev-title-overlay">
+            <h3>Reception</h3>
+            <p>Join us for an elegant evening of celebration, dinner, and memories to last a lifetime.</p>
+        </div>
+        <div class="ev-card">
+            <div class="ev-datetime">
+                <div class="ev-date">12 TH DECEMBER 2026</div>
+                <div class="ev-time">7 PM onwards</div>
+            </div>
+            <div class="ev-venue-label">VENUE:</div>
+            <div class="ev-venue-addr">The Wedding Venue</div>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+        </div>
+    </section>
+
+    <!-- SECTION 9: RSVP -->
+    <section class="sec-rsvp">
+        <div class="rsvp-bg"><img src="https://framerusercontent.com/images/gWqLPOULYVW2FFbOBbA6dGf3sUw.png?width=1080" alt="" loading="lazy"></div>
+        <div class="rsvp-grad-top"></div>
+        <div class="rsvp-grad-bot"></div>
+        <form class="rsvp-form-card" onsubmit="event.preventDefault(); alert('Thank you! Your RSVP has been submitted.');">
+            <h2>RSVP</h2>
+            <div class="note">PLEASE NOTE THAT THIS INVITATION IS<br>EXCLUSIVELY FOR YOU</div>
+            <div class="rsvp-options">
+                <label class="rsvp-option"><input type="radio" name="rsvp" value="yes" checked> YES I'LL BE THERE!</label>
+                <label class="rsvp-option"><input type="radio" name="rsvp" value="no"> SORRY, I CAN'T MAKE IT</label>
+            </div>
+            <div class="rsvp-field">
+                <label>Full Name*</label>
+                <input type="text" required placeholder="Your full name">
+            </div>
+            <div class="rsvp-field">
+                <label>Contact no.*</label>
+                <input type="tel" required placeholder="Your contact number">
+            </div>
+            <button type="submit" class="rsvp-submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- SECTION 10: LAST SLIDE -->
+    <section class="sec-last">
+        <div class="photo-grid">
+            <div class="grid-cell"><img src="moment-1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="grid-cell"><img src="moment-2.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="grid-cell"><img src="moment-3.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="grid-cell"><img src="moment-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+        </div>
+        <div class="regards">Regards</div>
+        <div class="family-name">Kartikay & Dishakkshi</div>
+        <div class="invite-footer">
+            <span>Invite by:</span>
+            <span>@everdezign.invites</span>
+        </div>
+    </section>
+
+    <!-- FALLING PETALS -->
+    <div class="petals-container" id="petals-container"></div>
+
+    <!-- MUSIC BUTTON -->
+    <button class="music-btn" id="music-btn" onclick="toggleMusic()">♫</button>
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://framerusercontent.com/assets/tHk7xrivW8bDCdhOyDo3Sw3P4D4.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Countdown
+        function updateCountdown() {
+            const target = new Date('2026-12-12T11:00:00+05:30').getTime();
+            const now = Date.now();
+            const diff = target - now;
+            if (diff <= 0) return;
+            document.getElementById('cd-days').textContent = Math.floor(diff / 86400000);
+            document.getElementById('cd-hours').textContent = Math.floor((diff % 86400000) / 3600000);
+            document.getElementById('cd-mins').textContent = Math.floor((diff % 3600000) / 60000);
+            document.getElementById('cd-secs').textContent = Math.floor((diff % 60000) / 1000);
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Petals
+        const colors = ['#E8768A', '#F2A8C0', '#A8DDD0', '#d4f5ec'];
+        const container = document.getElementById('petals-container');
+        for (let i = 0; i < 30; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            petal.style.animationDuration = (4 + Math.random() * 5) + 's';
+            petal.style.animationDelay = Math.random() * 8 + 's';
+            petal.style.width = (5 + Math.random() * 6) + 'px';
+            petal.style.height = petal.style.width;
+            container.appendChild(petal);
+        }
+
+        // Music
+        let playing = false;
+        function toggleMusic() {
+            const audio = document.getElementById('bg-music');
+            const btn = document.getElementById('music-btn');
+            if (playing) { audio.pause(); btn.textContent = '♫'; }
+            else { audio.play(); btn.textContent = '⏸'; }
+            playing = !playing;
+        }
+    </script>
+</body>
+</html>
