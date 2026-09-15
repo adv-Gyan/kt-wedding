@@ -994,6 +994,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // === INTERSECTION OBSERVER for glow ===
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1002,14 +1003,148 @@
                         entry.target.classList.remove('visible');
                     }
                 });
-            }, {
-                threshold: 0.15,
-                rootMargin: '0px 0px -50px 0px'
-            });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-            document.querySelectorAll('.sec-event, .sec-ganesh, .sec-location, .sec-moments, .sec-rsvp, .sec-last').forEach(el => observer.observe(el));
+            document.querySelectorAll('.sec-event, .sec-ganesh, .sec-location, .sec-moments, .sec-rsvp, .sec-last, .sec-std').forEach(el => observer.observe(el));
+
+            // === SPARKLE PARTICLES ===
+            function createSparkle(x, y, container) {
+                const s = document.createElement('span');
+                s.className = 'sparkle-dot';
+                const size = Math.random() * 5 + 2;
+                const angle = Math.random() * 360;
+                const dist = Math.random() * 40 + 10;
+                const dx = Math.cos(angle * Math.PI / 180) * dist;
+                const dy = Math.sin(angle * Math.PI / 180) * dist;
+                s.style.cssText = `left:${x}px;top:${y}px;width:${size}px;height:${size}px;
+                    --dx:${dx}px;--dy:${dy}px;`;
+                container.appendChild(s);
+                setTimeout(() => s.remove(), 900);
+            }
+
+            // Attach sparkles to fancy-title elements on scroll-in
+            const titleObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const rect = el.getBoundingClientRect();
+                        for (let i = 0; i < 10; i++) {
+                            setTimeout(() => {
+                                const x = Math.random() * rect.width;
+                                const y = Math.random() * rect.height;
+                                createSparkle(x, y, el);
+                            }, i * 60);
+                        }
+                    }
+                });
+            }, { threshold: 0.6 });
+
+            document.querySelectorAll('.fancy-title, .shree-title, .couple-names').forEach(el => {
+                el.style.position = 'relative';
+                titleObserver.observe(el);
+            });
         });
     </script>
+
+    <style>
+        /* ====== SCROLL GLOW EFFECTS ====== */
+
+        /* Sections fade + glow in on scroll */
+        .sec-event, .sec-ganesh, .sec-moments, .sec-rsvp, .sec-last {
+            opacity: 0.4;
+            transition: opacity 0.8s ease, filter 0.8s ease;
+            filter: brightness(0.75);
+        }
+        .sec-event.visible, .sec-ganesh.visible, .sec-moments.visible,
+        .sec-rsvp.visible, .sec-last.visible {
+            opacity: 1;
+            filter: brightness(1);
+        }
+
+        /* Countdown boxes pulse glow when section visible */
+        .sec-location.visible .cd-box {
+            box-shadow: 0 0 12px 3px rgba(212,175,55,0.55), 0 0 4px 1px rgba(212,175,55,0.4);
+            transition: box-shadow 0.9s ease;
+        }
+        .sec-location:not(.visible) .cd-box {
+            box-shadow: none;
+            transition: box-shadow 0.5s ease;
+        }
+
+        /* Blanking paper card glows when visible */
+        .sec-ganesh.visible .blanking-paper {
+            box-shadow: 0 0 40px 20px rgba(255,255,255,0.18), 0 0 80px 40px rgba(168,221,208,0.15);
+            transition: box-shadow 1s ease;
+        }
+        .sec-ganesh:not(.visible) .blanking-paper {
+            box-shadow: 0 0 30px 20px #fbfbfe;
+            transition: box-shadow 0.5s ease;
+        }
+
+        /* Event cards glow on scroll */
+        .sec-event.visible .ev-card {
+            box-shadow: 0 0 20px 6px rgba(168,221,208,0.3);
+            transition: box-shadow 0.8s ease;
+        }
+        .sec-event:not(.visible) .ev-card {
+            box-shadow: none;
+        }
+
+        /* Photo cards glow */
+        .sec-event.visible .ev-photo img {
+            filter: drop-shadow(0 0 12px rgba(168,221,208,0.5));
+            transition: filter 0.8s ease;
+        }
+
+        /* Fancy titles shimmer glow */
+        .fancy-title {
+            transition: text-shadow 0.8s ease;
+        }
+        .sec-moments.visible .fancy-title,
+        .sec-last.visible .fancy-title {
+            text-shadow: 0 0 20px rgba(242,168,192,0.8), 0 0 40px rgba(168,221,208,0.4);
+        }
+
+        /* RSVP section glow border */
+        .sec-rsvp.visible .rsvp-inner {
+            box-shadow: 0 0 30px 10px rgba(168,221,208,0.25);
+            transition: box-shadow 1s ease;
+        }
+
+        /* Countdown section glow background shimmer */
+        .sec-location.visible {
+            filter: brightness(1);
+            background: radial-gradient(ellipse at center, #1f5c4e 0%, #1a4d40 70%);
+            transition: background 1s ease, filter 0.5s ease;
+        }
+
+        /* ====== SPARKLE DOTS ====== */
+        .sparkle-dot {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #fff 0%, #d4af37 60%, transparent 100%);
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0;
+            animation: sparkle-burst 0.9s ease-out forwards;
+        }
+        @keyframes sparkle-burst {
+            0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+            100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
+        }
+
+        /* Names glow when ganesh section visible */
+        .sec-ganesh.visible .couple-names {
+            text-shadow: 0 0 20px rgba(133,152,209,0.7), 0 0 8px rgba(133,152,209,0.4);
+            transition: text-shadow 0.9s ease;
+        }
+
+        /* Countdown title glow */
+        .sec-location.visible h2 {
+            text-shadow: 0 0 24px rgba(255,255,255,0.5), 0 0 48px rgba(212,175,55,0.3);
+            transition: text-shadow 0.9s ease;
+        }
+    </style>
 </body>
 
 </html>
