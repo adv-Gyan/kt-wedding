@@ -883,22 +883,22 @@
         <div class="rsvp-bg"><img src="https://framerusercontent.com/images/gWqLPOULYVW2FFbOBbA6dGf3sUw.png?width=1080" alt="" loading="lazy"></div>
         <div class="rsvp-grad-top"></div>
         <div class="rsvp-grad-bot"></div>
-        <form class="rsvp-form-card" onsubmit="event.preventDefault(); alert('Thank you! Your RSVP has been submitted.');">
+        <form class="rsvp-form-card" id="rsvpForm">
             <h2>RSVP</h2>
             <div class="note">PLEASE NOTE THAT THIS INVITATION IS<br>EXCLUSIVELY FOR YOU</div>
             <div class="rsvp-options">
-                <label class="rsvp-option"><input type="radio" name="rsvp" value="yes" checked> YES I'LL BE THERE!</label>
-                <label class="rsvp-option"><input type="radio" name="rsvp" value="no"> SORRY, I CAN'T MAKE IT</label>
+                <label class="rsvp-option"><input type="radio" name="rsvp" value="Yes, I'll be there!" checked> YES I'LL BE THERE!</label>
+                <label class="rsvp-option"><input type="radio" name="rsvp" value="Sorry, I can't make it"> SORRY, I CAN'T MAKE IT</label>
             </div>
             <div class="rsvp-field">
                 <label>Full Name*</label>
-                <input type="text" required placeholder="Your full name">
+                <input type="text" id="rsvpName" required placeholder="Your full name">
             </div>
             <div class="rsvp-field">
                 <label>Contact no.*</label>
-                <input type="tel" required placeholder="Your contact number">
+                <input type="tel" id="rsvpContact" required placeholder="Your contact number">
             </div>
-            <button type="submit" class="rsvp-submit">Submit</button>
+            <button type="submit" class="rsvp-submit">Submit via WhatsApp</button>
         </form>
     </section>
 
@@ -1158,6 +1158,26 @@
             transition: text-shadow 0.9s ease;
         }
     </style>
+
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const rsvpStatus = document.querySelector('input[name="rsvp"]:checked').value;
+            const name = document.getElementById('rsvpName').value.trim();
+            const contact = document.getElementById('rsvpContact').value.trim();
+            
+            // Format the message for WhatsApp
+            const message = `Hello! Here is my RSVP for Kartikay & Dishakkshi's Wedding:\n\n*Name:* ${name}\n*Contact:* ${contact}\n*Status:* ${rsvpStatus}`;
+            
+            // NOTE: Replace '919876543210' with the actual WhatsApp number you want to receive RSVPs on.
+            // Include country code without the '+' sign (e.g., 91 for India).
+            const whatsappNumber = "919876543210"; 
+            
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
 </body>
 
 </html>
