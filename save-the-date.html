@@ -645,7 +645,39 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             display: flex; align-items: center; justify-content: center;
         }
-    </style>
+    
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+        .reveal.delay-4 { transition-delay: 0.4s; }
+
+        @keyframes pulse-soft {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        .pulse-btn {
+            animation: pulse-soft 2s infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        .sec-event .ev-photo img {
+            animation: sway 6s ease-in-out infinite;
+        }
+</style>
 </head>
 <body>
 
@@ -697,7 +729,7 @@
         <div class="layer"><img src="https://framerusercontent.com/images/cWE00LdyW2w4KRVGJVrTVbmghlE.png?width=1080" alt="" loading="lazy"></div>
         <div class="layer"><img src="https://framerusercontent.com/images/j3g6qC26bAGVVnIdYjeZQdWFDfs.png?width=1080" alt="" loading="lazy"></div>
         
-        <div class="blanking-paper">
+        <div class="blanking-paper reveal">
             <div class="shree-title">|| SHREE GANESHAY NAMAH ||</div>
             <img src="ganesha.png" class="ganesha-icon" alt="Ganesha">
             <div class="invite-text">We cordially invite you to join us<br>in celebrating our wedding</div>
@@ -716,11 +748,11 @@
 
         <!-- SECTION 3: COUNTDOWN -->
     <section class="sec-location">
-        <div style="text-align:center; margin-bottom: 24px; z-index: 5; position: relative;">
+        <div class="reveal" style="text-align:center; margin-bottom: 24px; z-index: 5; position: relative;">
             <h2 style="font-family:'Cinzel Decorative', serif; font-size:24px; font-weight:400; color:white; margin:0 0 10px 0; letter-spacing:1px; text-shadow:1px 1px 4px rgba(0,0,0,0.3);">COUNTDOWN BEGINS</h2>
             <p style="font-family:'Inter', sans-serif; font-size:10px; color:#d4af37; letter-spacing:3px; text-transform:uppercase; margin:0;">COUNTING DOWN TO THE WEDDING</p>
         </div>
-        <div class="countdown">
+        <div class="countdown reveal delay-1">
             <div class="cd-box"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
             <div class="cd-box"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
             <div class="cd-box"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Minutes</div></div>
@@ -730,18 +762,18 @@
 
     <!-- SECTION 4: SPECIAL MOMENTS -->
     <section class="sec-moments">
-        <div class="top-text">
+        <div class="top-text reveal">
             <div class="fancy-title">Special Moments</div>
             <div class="subtitle">Little glimpses of us, captured between<br>laughter, love and everything in between.</div>
         </div>
         <div class="photo-ticker">
-            <div class="ticker-card short"><img src="moment-1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
-            <div class="ticker-card tall"><img src="moment-2.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
-            <div class="ticker-card short"><img src="moment-3.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
-            <div class="ticker-card tall"><img src="moment-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="ticker-card short reveal delay-1"><img src="moment-1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="ticker-card tall reveal delay-2"><img src="moment-2.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="ticker-card short reveal delay-3"><img src="moment-3.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="ticker-card tall reveal delay-4"><img src="moment-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
         </div>
         <div class="divider-line"><img src="https://framerusercontent.com/images/RnHgwTLHWJIQSHYTODaZYjFjZLg.png?width=718" alt="" loading="lazy"></div>
-        <div class="bottom-text">
+        <div class="bottom-text reveal">
             <div class="fancy-title">Events Schedule</div>
             <div class="sub">Here's where the celebrations begin</div>
         </div>
@@ -751,14 +783,14 @@
     <section class="sec-event" id="haldi">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/FILV0RmDkHyWvvp3aONRegv5VA.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-1.jpg"></div>
-        <div class="ev-card">
+        <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">11 TH DECEMBER 2026</div>
                 <div class="ev-time">10 AM onwards</div>
             </div>
             <div class="ev-venue-label">VENUE:</div>
             <div class="ev-venue-addr">IIDM Resort</div>
-            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn pulse-btn">TAP FOR DIRECTIONS</a>
         </div>
     </section>
 
@@ -766,14 +798,14 @@
     <section class="sec-event" id="sangeet">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/XLQey2gyAOWV3AChea4BqxJu6o.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-2.jpg"></div>
-        <div class="ev-card">
+        <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">11 TH DECEMBER 2026</div>
                 <div class="ev-time">7 PM onwards</div>
             </div>
             <div class="ev-venue-label">VENUE:</div>
             <div class="ev-venue-addr">IIDM Resort</div>
-            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn pulse-btn">TAP FOR DIRECTIONS</a>
         </div>
     </section>
 
@@ -781,14 +813,14 @@
     <section class="sec-event" id="wedding">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/tNO2x9trlgVd08uQyGLh6tYwPkc.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-3.jpg"></div>
-        <div class="ev-card">
+        <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">12 TH DECEMBER 2026</div>
                 <div class="ev-time">11 AM onwards</div>
             </div>
             <div class="ev-venue-label">VENUE:</div>
             <div class="ev-venue-addr">IIDM Resort</div>
-            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn pulse-btn">TAP FOR DIRECTIONS</a>
         </div>
     </section>
 
@@ -796,14 +828,14 @@
     <section class="sec-event" id="reception">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/8f5Z98JG6lmSrLx4kjhwmqXYs.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-4.jpg"></div>
-        <div class="ev-card">
+        <div class="ev-card reveal delay-1">
             <div class="ev-datetime">
                 <div class="ev-date">12 TH DECEMBER 2026</div>
                 <div class="ev-time">7 PM onwards</div>
             </div>
             <div class="ev-venue-label">VENUE:</div>
             <div class="ev-venue-addr">IIDM Resort</div>
-            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn">TAP FOR DIRECTIONS</a>
+            <a href="https://share.google/fodu8JmyNqvUszPeQ" target="_blank" class="ev-dir-btn pulse-btn">TAP FOR DIRECTIONS</a>
         </div>
     </section>
 
@@ -834,10 +866,10 @@
     <!-- SECTION 10: LAST SLIDE -->
     <section class="sec-last">
         <div class="photo-grid">
-            <div class="grid-cell"><img src="end-1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
-            <div class="grid-cell"><img src="end-2.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
-            <div class="grid-cell"><img src="end-3.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
-            <div class="grid-cell"><img src="end-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="grid-cell reveal delay-1"><img src="end-1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="grid-cell reveal delay-2"><img src="end-2.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="grid-cell reveal delay-3"><img src="end-3.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
+            <div class="grid-cell reveal delay-4"><img src="end-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></div>
         </div>
         <div class="regards">Regards</div>
         <div class="family-name">Kartikay & Dishakkshi</div>
@@ -848,12 +880,28 @@
     <div class="petals-container" id="petals-container"></div>
 
     <!-- MUSIC BUTTON -->
-    <button class="music-btn" id="music-btn" onclick="toggleMusic()">♫</button>
+    <button class="music-btn pulse-btn" id="music-btn" onclick="toggleMusic()">♫</button>
     <audio id="bg-music" loop preload="auto" autoplay>
         <source src="https://framerusercontent.com/assets/tHk7xrivW8bDCdhOyDo3Sw3P4D4.mp3" type="audio/mpeg">
     </audio>
 
     <script>
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // only reveal once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
         // Countdown
         function updateCountdown() {
             const target = new Date('2026-12-12T11:00:00+05:30').getTime();
