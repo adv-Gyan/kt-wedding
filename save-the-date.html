@@ -19,6 +19,7 @@
             max-width: 390px;
             margin: 0 auto;
             position: relative;
+            overflow-x: hidden;
         }
 
         /* ===== SECTION 1: SAVE THE DATE (705px) ===== */
@@ -298,7 +299,7 @@
             position: absolute;
             top: 21px;
             left: 50%; transform: translateX(-50%);
-            width: 350px; text-align: center;
+            width: 90%; max-width: 350px; text-align: center;
         }
         .sec-moments .fancy-title {
             font-family: 'Dancing Script', cursive;
@@ -322,8 +323,10 @@
             display: flex; gap: 10px;
             align-items: center;
             overflow-x: auto;
+            overflow-y: hidden;
             padding: 0 20px;
             scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
         }
         .sec-moments .photo-ticker::-webkit-scrollbar { display: none; }
         .sec-moments .ticker-card {
@@ -353,7 +356,7 @@
             position: absolute;
             bottom: 37px;
             left: 50%; transform: translateX(-50%);
-            width: 313px; text-align: center;
+            width: 90%; max-width: 313px; text-align: center;
         }
         .sec-moments .bottom-text .fancy-title {
             font-size: 48px;
@@ -806,7 +809,7 @@
     <section class="sec-event" id="haldi">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/FILV0RmDkHyWvvp3aONRegv5VA.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-1.jpg"></div>
-        <div class="ev-card reveal delay-1">
+        <div class="ev-card">
             <div class="ev-datetime">
                 <div class="ev-date">11 TH DECEMBER 2026</div>
                 <div class="ev-time">10 AM onwards</div>
@@ -821,7 +824,7 @@
     <section class="sec-event" id="sangeet">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/XLQey2gyAOWV3AChea4BqxJu6o.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-2.jpg"></div>
-        <div class="ev-card reveal delay-1">
+        <div class="ev-card">
             <div class="ev-datetime">
                 <div class="ev-date">11 TH DECEMBER 2026</div>
                 <div class="ev-time">7 PM onwards</div>
@@ -836,7 +839,7 @@
     <section class="sec-event" id="wedding">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/tNO2x9trlgVd08uQyGLh6tYwPkc.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-3.jpg"></div>
-        <div class="ev-card reveal delay-1">
+        <div class="ev-card">
             <div class="ev-datetime">
                 <div class="ev-date">12 TH DECEMBER 2026</div>
                 <div class="ev-time">11 AM onwards</div>
@@ -851,7 +854,7 @@
     <section class="sec-event" id="reception">
         <div class="ev-bg"><img src="https://framerusercontent.com/images/8f5Z98JG6lmSrLx4kjhwmqXYs.png?width=1080" alt="" loading="lazy"></div>
         <div class="ev-photo"><img src="event-4.jpg"></div>
-        <div class="ev-card reveal delay-1">
+        <div class="ev-card">
             <div class="ev-datetime">
                 <div class="ev-date">12 TH DECEMBER 2026</div>
                 <div class="ev-time">7 PM onwards</div>
