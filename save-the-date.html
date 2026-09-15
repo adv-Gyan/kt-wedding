@@ -797,7 +797,7 @@
 
     <!-- MUSIC BUTTON -->
     <button class="music-btn" id="music-btn" onclick="toggleMusic()">♫</button>
-    <audio id="bg-music" loop preload="auto">
+    <audio id="bg-music" loop preload="auto" autoplay>
         <source src="https://framerusercontent.com/assets/tHk7xrivW8bDCdhOyDo3Sw3P4D4.mp3" type="audio/mpeg">
     </audio>
 
@@ -831,11 +831,29 @@
             container.appendChild(petal);
         }
 
-        // Music
+        // Music - autoplay with fallback
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('music-btn');
+        audio.volume = 0.5;
         let playing = false;
+
+        function tryPlay() {
+            audio.play().then(() => {
+                playing = true;
+                btn.textContent = '⏸';
+            }).catch(() => {
+                document.addEventListener('click', startOnInteraction, { once: true });
+                document.addEventListener('touchstart', startOnInteraction, { once: true });
+            });
+        }
+        function startOnInteraction() {
+            audio.play();
+            playing = true;
+            btn.textContent = '⏸';
+        }
+        window.addEventListener('load', tryPlay);
+
         function toggleMusic() {
-            const audio = document.getElementById('bg-music');
-            const btn = document.getElementById('music-btn');
             if (playing) { audio.pause(); btn.textContent = '♫'; }
             else { audio.play(); btn.textContent = '⏸'; }
             playing = !playing;
