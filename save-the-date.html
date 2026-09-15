@@ -838,6 +838,12 @@
         let playing = false;
 
         function tryPlay() {
+            // Resume from where index page left off
+            const savedTime = parseFloat(sessionStorage.getItem('musicTime') || 0);
+            if (savedTime > 0) audio.currentTime = savedTime;
+            sessionStorage.removeItem('musicTime');
+            sessionStorage.removeItem('musicPlaying');
+
             audio.play().then(() => {
                 playing = true;
                 btn.textContent = '⏸';

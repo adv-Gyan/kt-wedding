@@ -320,12 +320,19 @@ img[data-placeholder="true"]::after {
         audio.volume = 0.5;
         function tryPlay() {
             audio.play().catch(() => {
-                // If blocked, play on first touch
                 document.addEventListener('click', () => audio.play(), { once: true });
                 document.addEventListener('touchstart', () => audio.play(), { once: true });
             });
         }
         window.addEventListener('load', tryPlay);
+
+        // Before navigating to save-the-date, save music position
+        document.querySelectorAll('a[href="save-the-date.html"]').forEach(link => {
+            link.addEventListener('click', () => {
+                sessionStorage.setItem('musicTime', audio.currentTime);
+                sessionStorage.setItem('musicPlaying', !audio.paused);
+            });
+        });
     </script>
 
 </body>
